@@ -1,74 +1,96 @@
-import { Image, StyleSheet, Platform } from 'react-native';
-
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
+import { StyleSheet, Text, View, Dimensions } from 'react-native';
+import { Input } from '@/components/Input/Input';
+import { CustomButton as Button } from '@/components/CustomButton/CustomButton';
 
 export default function HomeScreen() {
+  const width = Dimensions.get('window').width;
+
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
+    <View style={styles.container}>
+      <View style={styles.content}>
+        <Text style={styles.title}>{`Welcome back to\nMega Shop`}</Text>
+        <Text style={styles.subTitle}>Please enter data to login</Text>
+      </View>
+
+      <View style={styles.form}>
+        <Input
+          label='Email'
+          placeholder='Enter your Email Address'
         />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12'
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          Tap the Explore tab to learn more about what's included in this starter app.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          When you're ready, run{' '}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+        <Input
+          label='Password'
+          placeholder='Enter Account Password'
+          isPassword={true}
+        />
+
+        <View style={styles.formControls}>
+          <Button
+            label='Sign In'
+          />
+        </View>
+      </View>
+
+      <View style={styles.footer}>
+        <Text style={styles.footerBtn}>Forgot Password</Text>
+        <Text style={styles.footerBtnBlue}>Sign Up</Text>
+      </View>
+
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  titleContainer: {
+  container: {
+    backgroundColor: '#FFFFFF',
+    paddingTop: '34%',
+    paddingLeft: 25,
+    paddingRight: 25,
+    height: '100%'
+  },
+  content: {
+    marginBottom: 25,
+    rowGap: 20
+  },
+  title: {
+    fontSize: 25,
+    fontWeight: '700',
+    lineHeight: 25,
+    color: '#0C1A30'
+  },
+  subTitle: {
+    fontSize: 14,
+    lineHeight: 25,
+    fontWeight: '400',
+    color: '#838589'
+  },
+  form: {
+    paddingTop: 25,
+    rowGap: 30
+  },
+  formControls: {
+    paddingTop: 85
+  },
+  formButton: {
+    backgroundColor: '#3669C9'
+  },
+  footer: {
+    marginTop: 'auto',
+    paddingLeft: 5,
+    paddingRight: 5,
+    paddingBottom: 30,
     flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
+    justifyContent: 'space-between'
   },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
+  footerBtn: {
+    fontSize: 14,
+    fontWeight: '500',
+    lineHeight: 14,
+    color: '#0C1A30'
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
-  },
-});
+  footerBtnBlue: {
+    fontSize: 14,
+    fontWeight: '500',
+    lineHeight: 14,
+    color: '#3669C9'
+  }
+})
