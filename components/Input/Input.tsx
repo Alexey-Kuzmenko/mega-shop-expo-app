@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { TextInput, TextInputProps, View, Text, StyleSheet, Pressable } from 'react-native';
-import { Colors, Gaps, Radius } from '@/constants/tokens';
+import { Colors, Gaps, Radius } from '@/constants/constants';
 import ClosedEyeIcon from '@/assets/icons/closed-eye';
 import EyeIcon from '@/assets/icons/eye';
 
@@ -14,7 +14,7 @@ export const Input: React.FC<InputProps> = ({ label, isPassword, ...props }) => 
     const [isShown, setIsShown] = useState<boolean>(false);
 
     const handlePress = (): void => {
-        setIsShown(!isShown)
+        setIsShown(!isShown);
     };
 
     const iconButton = (
@@ -40,7 +40,7 @@ export const Input: React.FC<InputProps> = ({ label, isPassword, ...props }) => 
             }
         </View>
     );
-}
+};
 
 const styles = StyleSheet.create({
     inputGroup: {
@@ -72,4 +72,4 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         paddingVertical: 17
     }
-})
+});

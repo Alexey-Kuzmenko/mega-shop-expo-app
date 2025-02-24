@@ -24,8 +24,8 @@ export const Colors = {
 export const Gaps = {
   g20: 20,
   g30: 30
-}
+};
 
 export const Radius = {
   r10: 10
-}
+};
