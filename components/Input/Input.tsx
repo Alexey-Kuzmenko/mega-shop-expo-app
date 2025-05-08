@@ -1,9 +1,11 @@
 import { useState } from 'react';
 
-import { TextInput, TextInputProps, View, Text, StyleSheet, Pressable } from 'react-native';
-import { Colors, Gaps, Radius } from '@/constants/constants';
-import ClosedEyeIcon from '@/assets/icons/closed-eye';
-import EyeIcon from '@/assets/icons/eye';
+import { TextInput, TextInputProps, View, Text, Pressable } from 'react-native';
+import { colors } from '@/styles/theme';
+import ClosedEyeIcon from '@/components/Icons/ClosedEye';
+import EyeIcon from '@/components/Icons/Eye';
+
+import styles from './styles';
 
 interface InputProps extends TextInputProps {
     label?: string
@@ -33,7 +35,7 @@ export const Input: React.FC<InputProps> = ({ label, isPassword, ...props }) => 
                 {...props}
                 secureTextEntry={isPassword && !isShown}
                 style={styles.input}
-                placeholderTextColor={Colors.secondary.halfGrey}
+                placeholderTextColor={colors.secondary.halfGrey}
             />
             {
                 isPassword ? iconButton : null
@@ -41,35 +43,3 @@ export const Input: React.FC<InputProps> = ({ label, isPassword, ...props }) => 
         </View>
     );
 };
-
-const styles = StyleSheet.create({
-    inputGroup: {
-        rowGap: Gaps.g20
-    },
-    input: {
-        paddingTop: 16,
-        paddingBottom: 16,
-        paddingLeft: 20,
-        paddingRight: 15,
-
-        color: Colors.primary.black,
-        fontSize: 14,
-        lineHeight: 18,
-
-        backgroundColor: Colors.secondary.softGrey,
-        borderRadius: Radius.r10
-    },
-    inputLabel: {
-        fontSize: 14,
-        fontWeight: '400',
-        lineHeight: 20,
-        color: Colors.primary.black
-    },
-    icon: {
-        position: 'absolute',
-        right: 0,
-        bottom: 0,
-        paddingHorizontal: 20,
-        paddingVertical: 17
-    }
-});

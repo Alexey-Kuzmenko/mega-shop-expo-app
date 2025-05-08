@@ -1,4 +1,4 @@
-export const Colors = {
+export const colors = {
   primary: {
     pureWhite: '#FFFFFF',
     freshOrange: '#FDA429',
@@ -21,11 +21,11 @@ export const Colors = {
   }
 };
 
-export const Gaps = {
+export const gaps = {
   g20: 20,
   g30: 30
 };
 
-export const Radius = {
+export const radius = {
   r10: 10
 };
