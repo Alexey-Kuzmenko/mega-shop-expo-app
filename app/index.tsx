@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { Input } from '@/components/Input/Input';
 import { CustomButton as Button } from '@/components/CustomButton/CustomButton';
-import { Link } from 'expo-router';
+import { CustomLink as Link } from '@/components/CustomLink/CustomLink';
 
 export default function HomeScreen() {
   return (
@@ -30,15 +30,8 @@ export default function HomeScreen() {
       </View>
 
       <View style={styles.footer}>
-        <Link href='/restore' style={styles.footerBtn}>
-          <Text>
-            Forgot Password
-          </Text>
-        </Link>
-
-        <Link href='/signups'>
-          <Text style={styles.footerBtnBlue}>Sign Up</Text>
-        </Link>
+        <Link href='/restore' label='Forgot Password' labelStyle={styles.footerBtn} fontStyle='medium' />
+        <Link href='/product/smartphone' label='Sign Up' labelStyle={styles.footerBtnBlue} fontStyle='medium' />
       </View>
 
     </View>
@@ -98,6 +91,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '500',
     lineHeight: 14,
-    color: '#3669C9'
+    color: '#3669C9',
+    fontFamily: 'DMSansBold'
   }
 });

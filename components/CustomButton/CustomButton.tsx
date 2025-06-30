@@ -46,7 +46,7 @@ export const CustomButton: React.FC<ButtonProps> = ({ label, ...props }) => {
                 ...styles.button,
                 backgroundColor: bgColor,
             }}>
-                <Typography text={label} textStyle={styles.label} />
+                <Typography text={label} textStyle={styles.label} fontStyle='medium' />
             </Animated.View>
         </Pressable>
     );

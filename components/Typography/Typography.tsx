@@ -3,7 +3,7 @@ import { StyleProp, Text, TextStyle } from 'react-native';
 
 import styles from './styles';
 
-const fontStyles = {
+export const fontStyles = {
     'regular': 'DMSans',
     'medium': 'DMSansMedium',
     'bold': 'DMSansBold'
