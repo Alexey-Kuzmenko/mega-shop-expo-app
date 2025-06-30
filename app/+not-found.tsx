@@ -1,4 +1,4 @@
-import { UnmatchedRoute } from '@/components/UnmatchedRoute/Unmatched';
+import { UnmatchedRoute } from '@/shared/UnmatchedRoute/Unmatched';
 
 export default function NotFound() {
     return (

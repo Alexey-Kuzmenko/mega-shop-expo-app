@@ -1,4 +1,4 @@
-import { Typography } from '@/components/Typography/Typography';
+import { Typography } from '@/shared/Typography/Typography';
 import { useLocalSearchParams } from 'expo-router';
 import React from 'react';
 import { SafeAreaView } from 'react-native';

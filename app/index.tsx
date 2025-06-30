@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native';
-import { Input } from '@/components/Input/Input';
-import { CustomButton as Button } from '@/components/CustomButton/CustomButton';
-import { CustomLink as Link } from '@/components/CustomLink/CustomLink';
+import { Input } from '@/shared/Input/Input';
+import { CustomButton as Button } from '@/shared/CustomButton/CustomButton';
+import { CustomLink as Link } from '@/shared/CustomLink/CustomLink';
 
 export default function HomeScreen() {
   return (

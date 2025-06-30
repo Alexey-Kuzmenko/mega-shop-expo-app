@@ -2,8 +2,8 @@ import { useState } from 'react';
 
 import { TextInput, TextInputProps, View, Text, Pressable } from 'react-native';
 import { colors } from '@/styles/theme';
-import ClosedEyeIcon from '@/components/Icons/ClosedEye';
-import EyeIcon from '@/components/Icons/Eye';
+import ClosedEyeIcon from '@/shared/Icons/ClosedEye';
+import EyeIcon from '@/shared/Icons/Eye';
 
 import styles from './styles';
 
