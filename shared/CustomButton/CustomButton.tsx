@@ -1,14 +1,15 @@
 import { colors } from '@/styles/theme';
-import { Animated, GestureResponderEvent, Pressable, PressableProps } from 'react-native';
+import { ActivityIndicator, Animated, GestureResponderEvent, Pressable, PressableProps } from 'react-native';
 
 import styles from './styles';
 import { Typography } from '../Typography/Typography';
 
 interface ButtonProps extends PressableProps {
     label: string
+    loading?: boolean
 }
 
-export const CustomButton: React.FC<ButtonProps> = ({ label, ...props }) => {
+export const CustomButton: React.FC<ButtonProps> = ({ label, loading, ...props }) => {
     const animatedValue = new Animated.Value(100);
 
     const bgColor = animatedValue.interpolate({
@@ -46,7 +47,12 @@ export const CustomButton: React.FC<ButtonProps> = ({ label, ...props }) => {
                 ...styles.button,
                 backgroundColor: bgColor,
             }}>
-                <Typography text={label} textStyle={styles.label} fontStyle='medium' />
+                {
+                    loading ?
+                        <ActivityIndicator size='small' color={colors.primary.pureWhite} />
+                        :
+                        <Typography text={label} textStyle={styles.label} fontStyle='medium' />
+                }
             </Animated.View>
         </Pressable>
     );

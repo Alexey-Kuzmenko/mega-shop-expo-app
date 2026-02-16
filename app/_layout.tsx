@@ -1,10 +1,10 @@
+import { useEffect } from 'react';
 import { Platform } from 'react-native';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { Stack, SplashScreen } from 'expo-router';
 import { useFonts } from 'expo-font';
 import { StatusBar } from 'expo-status-bar';
-import { useEffect } from 'react';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -37,15 +37,7 @@ function RootLayout() {
                     paddingTop: insets.top,
                     paddingBottom: isIOS ? 3 : 0
                 }
-            }}>
-                <Stack.Screen name='index' options={{
-                    title: 'Sign In',
-
-                }} />
-                <Stack.Screen name='signup' options={{
-                    title: 'Sing Up'
-                }} />
-            </Stack>
+            }} />
         </SafeAreaProvider>
     );
 }
