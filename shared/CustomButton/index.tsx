@@ -2,7 +2,7 @@ import { colors } from '@/styles/theme';
 import { ActivityIndicator, Animated, GestureResponderEvent, Pressable, PressableProps } from 'react-native';
 
 import styles from './styles';
-import { Typography } from '../Typography/Typography';
+import { Typography } from '../Typography';
 
 interface ButtonProps extends PressableProps {
     label: string

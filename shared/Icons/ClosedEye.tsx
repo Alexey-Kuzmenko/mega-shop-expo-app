@@ -1,16 +1,17 @@
-import * as React from "react"
-import Svg, { Path } from "react-native-svg"
+/* eslint-disable max-len */
+import * as React from 'react';
+import Svg, { Path } from 'react-native-svg';
+import { IconProps } from '@/types';
+import { colors } from '@/styles/theme';
 
-const ClosedEyeIcon = () => (
+export const ClosedEyeIcon = ({ color = colors.secondary.halfGrey, ...props }: IconProps) => (
     <Svg
         fill="none"
-        width={20}
-        height={18}
+        {...props}
     >
         <Path
-            fill="#838589"
+            fill={color}
             d="M19.392 7.85a13.22 13.22 0 0 0-2.809-3.258l2.334-2.334a.833.833 0 0 0-1.179-1.178l-2.537 2.54A10.045 10.045 0 0 0 10 2.213c-5.16 0-8.1 3.532-9.393 5.637a4.09 4.09 0 0 0 0 4.302 13.222 13.222 0 0 0 2.81 3.257l-2.334 2.334a.832.832 0 1 0 1.178 1.178l2.544-2.543A10.046 10.046 0 0 0 10 17.787c5.159 0 8.099-3.531 9.392-5.636a4.09 4.09 0 0 0 0-4.302ZM2.027 11.277a2.431 2.431 0 0 1 0-2.556C3.14 6.917 5.651 3.879 10 3.879a8.417 8.417 0 0 1 3.972.971l-1.678 1.678a4.16 4.16 0 0 0-5.767 5.766L4.602 14.22a11.437 11.437 0 0 1-2.575-2.94ZM12.5 10a2.5 2.5 0 0 1-2.5 2.5 2.459 2.459 0 0 1-1.071-.25l3.32-3.32c.164.333.25.699.25 1.07Zm-5 0A2.5 2.5 0 0 1 10 7.5c.371.001.737.087 1.07.25l-3.32 3.32A2.46 2.46 0 0 1 7.5 10Zm10.472 1.278c-1.111 1.805-3.624 4.843-7.972 4.843a8.416 8.416 0 0 1-3.972-.971l1.678-1.678a4.16 4.16 0 0 0 5.766-5.766l1.925-1.925c1.021.825 1.892 1.82 2.575 2.94a2.432 2.432 0 0 1 0 2.557Z"
         />
     </Svg>
-)
-export default ClosedEyeIcon;
+);

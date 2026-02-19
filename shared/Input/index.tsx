@@ -2,8 +2,8 @@ import { useState } from 'react';
 
 import { TextInput, TextInputProps, View, Text, Pressable } from 'react-native';
 import { colors } from '@/styles/theme';
-import ClosedEyeIcon from '@/shared/Icons/ClosedEye';
-import EyeIcon from '@/shared/Icons/Eye';
+import { ClosedEyeIcon } from '@/shared/Icons/ClosedEye';
+import { EyeIcon } from '@/shared/Icons/Eye';
 
 import styles from './styles';
 
@@ -24,7 +24,7 @@ export const Input: React.FC<InputProps> = ({ label, isPassword, ...props }) => 
             style={styles.icon}
             onPress={handlePress}
         >
-            {isShown ? ClosedEyeIcon : EyeIcon}
+            {isShown ? <ClosedEyeIcon width={20} height={18} /> : <EyeIcon width={20} height={16} />}
         </Pressable>
     );
 

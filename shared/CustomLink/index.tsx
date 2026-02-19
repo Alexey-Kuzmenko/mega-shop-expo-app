@@ -1,5 +1,5 @@
 import { Link, LinkProps } from 'expo-router';
-import { fontStyles, Typography } from '../Typography/Typography';
+import { fontStyles, Typography } from '../Typography';
 import { StyleProp, TextStyle } from 'react-native';
 
 type CustomLinkProps =

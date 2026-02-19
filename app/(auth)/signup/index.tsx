@@ -1,4 +1,4 @@
-import { Typography } from '@/shared/Typography/Typography';
+import { Typography } from '@/shared/Typography';
 import { Link } from 'expo-router';
 import { View } from 'react-native';
 

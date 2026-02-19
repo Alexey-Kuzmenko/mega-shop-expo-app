@@ -1,19 +1,19 @@
-import * as React from "react"
-import Svg, { Path } from "react-native-svg"
+/* eslint-disable max-len */
+import * as React from 'react';
+import Svg, { Path } from 'react-native-svg';
+import { IconProps } from '@/types';
+import { colors } from '@/styles/theme';
 
-const EyeIcon = () => (
+export const EyeIcon = ({ color = colors.secondary.halfGrey, ...props }: IconProps) => (
     <Svg
         fill="none"
-        width={20}
-        height={16}
+        {...props}
     >
         <Path
-            fill="#838589"
+            fill={color}
             fillRule="evenodd"
             d="M10 .213c5.16 0 8.1 3.531 9.392 5.636a4.09 4.09 0 0 1 0 4.302C18.1 12.256 15.16 15.787 10 15.787c-5.16 0-8.1-3.531-9.393-5.636a4.09 4.09 0 0 1 0-4.302C1.9 3.744 4.84.213 10 .213Zm0 13.908c4.349 0 6.861-3.038 7.971-4.843a2.432 2.432 0 0 0 0-2.556C16.861 4.913 14.35 1.879 10 1.879c-4.35 0-6.862 3.038-7.972 4.843a2.432 2.432 0 0 0 0 2.556c1.11 1.805 3.623 4.843 7.972 4.843ZM7.685 4.536a4.167 4.167 0 1 1 4.63 6.929 4.167 4.167 0 0 1-4.63-6.93Zm.926 5.543a2.5 2.5 0 1 0 2.778-4.158A2.5 2.5 0 0 0 8.61 10.08Z"
             clipRule='evenodd'
         />
     </Svg>
-)
-
-export default EyeIcon;
+);

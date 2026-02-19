@@ -1,9 +1,9 @@
 import { useSetAtom } from 'jotai';
 
 import { logoutAtom } from '@/entities/auth/model/auth.state';
-import { CustomButton as Button } from '@/shared/CustomButton/CustomButton';
-import { CustomLink as Link } from '@/shared/CustomLink/CustomLink';
-import { Typography } from '@/shared/Typography/Typography';
+import { CustomButton as Button } from '@/shared/CustomButton';
+import { CustomLink as Link } from '@/shared/CustomLink';
+import { Typography } from '@/shared/Typography';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function HomeScreen() {

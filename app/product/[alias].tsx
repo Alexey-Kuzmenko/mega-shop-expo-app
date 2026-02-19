@@ -2,7 +2,7 @@ import { SafeAreaView } from 'react-native';
 import { useLocalSearchParams } from 'expo-router';
 import { useAtom } from 'jotai';
 
-import { Typography } from '@/shared/Typography/Typography';
+import { Typography } from '@/shared/Typography';
 import { profileAtom } from '@/entities/user/model/user.state';
 
 export default function ProductPage() {

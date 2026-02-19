@@ -1,7 +1,7 @@
 import { Image, View } from 'react-native';
 import { useRouter } from 'expo-router';
-import { Typography } from '../Typography/Typography';
-import { CustomButton as Button } from '../CustomButton/CustomButton';
+import { Typography } from '../Typography';
+import { CustomButton as Button } from '../CustomButton';
 
 import styles from './styles';
 
