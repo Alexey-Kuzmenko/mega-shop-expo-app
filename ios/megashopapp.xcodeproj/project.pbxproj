@@ -295,11 +295,13 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.name.megashopapp;
-				PRODUCT_NAME = megashopapp;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.anonymous.megashopapp";
+				PRODUCT_NAME = "megashopapp";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				CODE_SIGN_ENTITLEMENTS = megashopapp/megashopapp.entitlements;
 			};
 			name = Debug;
 		};
@@ -319,10 +321,12 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.name.megashopapp;
-				PRODUCT_NAME = megashopapp;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.anonymous.megashopapp";
+				PRODUCT_NAME = "megashopapp";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				CODE_SIGN_ENTITLEMENTS = megashopapp/megashopapp.entitlements;
 			};
 			name = Release;
 		};

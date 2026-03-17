@@ -4,7 +4,7 @@
     "slug": "mega-shop-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "",
     "scheme": "megashop",
     "userInterfaceStyle": "automatic",
     "backgroundColor": "#FFFFFF",
@@ -15,7 +15,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "foregroundImage": "",
         "backgroundColor": "#ffffff"
       },
       "package": "com.anonymous.megashopapp"
@@ -36,7 +36,8 @@
           "backgroundColor": "#FFFFFF"
         }
       ],
-      "expo-font"
+      "expo-font",
+      "expo-web-browser"
     ],
     "experiments": {
       "typedRoutes": true

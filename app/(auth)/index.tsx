@@ -84,8 +84,18 @@ export default function AuthScreen() {
         </View>
 
         <View style={styles.footer}>
-          <Link href='/restore' label='Forgot Password' labelStyle={styles.footerBtn} fontStyle='medium' />
-          <Link href='/product/smartphone' label='Sign Up' labelStyle={styles.footerBtnBlue} fontStyle='medium' />
+          <Link
+            href='/restore'
+            label='Forgot Password'
+            labelStyle={styles.footerBtn}
+            fontStyle='medium'
+          />
+          <Link
+            href='/product/smartphone'
+            label='Sign Up'
+            labelStyle={[styles.footerBtn, styles.footerBtnBlue]}
+            fontStyle='medium'
+          />
         </View>
       </View>
     </>

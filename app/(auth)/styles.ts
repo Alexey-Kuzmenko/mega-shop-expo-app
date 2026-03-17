@@ -1,5 +1,8 @@
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 import { colors } from '@/styles/theme';
+
+const footerBtnTextLineHeigh = Platform.OS === 'ios' ? 14 : 18;
+const titleLineHeigh = Platform.OS === 'ios' ? 25 : 30;
 
 export default StyleSheet.create({
     container: {
@@ -15,7 +18,7 @@ export default StyleSheet.create({
     },
     title: {
         fontSize: 25,
-        lineHeight: 25,
+        lineHeight: titleLineHeigh,
         color: colors.primary.black,
         fontFamily: 'DMSans'
     },
@@ -41,16 +44,14 @@ export default StyleSheet.create({
         paddingRight: 5,
         paddingBottom: 30,
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
     },
     footerBtn: {
         fontSize: 14,
-        lineHeight: 14,
-        color: colors.primary.black
+        lineHeight: footerBtnTextLineHeigh,
+        color: colors.primary.black,
     },
     footerBtnBlue: {
-        fontSize: 14,
-        lineHeight: 14,
         color: colors.primary.blueOcean,
         fontFamily: 'DMSansBold'
     }
