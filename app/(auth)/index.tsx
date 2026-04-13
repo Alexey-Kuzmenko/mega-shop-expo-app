@@ -1,18 +1,16 @@
 import { useEffect, useState } from 'react';
-import { Text, View } from 'react-native';
+import { Pressable, ScrollView, Text, View } from 'react-native';
 import { router } from 'expo-router';
-
 import { useAtom } from 'jotai';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { loginAtom } from '@/entities/auth/model/auth.state';
 
 import {
   Input,
   CustomButton as Button,
   CustomLink as Link,
-  CustomAlert as Alert
+  CustomAlert as Alert,
+  Typography
 } from '@/shared';
-
-import { loginAtom } from '@/entities/auth/model/auth.state';
 
 import styles from './styles';
 
@@ -27,13 +25,11 @@ export default function AuthScreen() {
     await login({ email: userEmail, password: userPassword });
     setUserEmail('');
     setUserPassword('');
-
-    AsyncStorage.getItem('auth').then((data) => console.log(data, 'Auth data after login'));
   };
 
   useEffect(() => {
     if (access_token && !isLoading) {
-      router.replace('..');
+      router.replace('/(tabs)');
     }
   }, [access_token, isLoading]);
 
@@ -50,8 +46,16 @@ export default function AuthScreen() {
   };
 
   return (
+    // <ScrollView
+    //   contentContainerStyle={{ flexGrow: 1 }}
+    //   bounces={false}
+    // >
     <>
       {showErrorAlert && <Alert show text={error || ''} type='error' onPress={handleAlertPress} />}
+
+      <Pressable onPress={() => router.replace('/(tabs)')}>
+        <Typography text='Go back' />
+      </Pressable>
 
       <View style={styles.container}>
         <View style={styles.content}>
@@ -66,6 +70,7 @@ export default function AuthScreen() {
             value={userEmail}
             onChangeText={setUserEmail}
           />
+
           <Input
             label='Password'
             placeholder='Enter Account Password'
@@ -91,7 +96,7 @@ export default function AuthScreen() {
             fontStyle='medium'
           />
           <Link
-            href='/product/smartphone'
+            href='/signup'
             label='Sign Up'
             labelStyle={[styles.footerBtn, styles.footerBtnBlue]}
             fontStyle='medium'
@@ -99,5 +104,6 @@ export default function AuthScreen() {
         </View>
       </View>
     </>
+    // </ScrollView>
   );
 }

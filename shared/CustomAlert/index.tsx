@@ -1,6 +1,5 @@
 import { Pressable, StyleProp, TextStyle, View, ViewStyle } from 'react-native';
 import { Typography } from '../Typography';
-import { SuccessIcon } from '../Icons';
 
 import styles from './styles';
 import { CustomAlertIcon } from './CustomAlertIcon';

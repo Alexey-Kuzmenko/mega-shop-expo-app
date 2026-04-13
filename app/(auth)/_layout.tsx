@@ -18,12 +18,11 @@ function AuthLayout() {
             }}>
                 <Stack.Screen name='index' options={{
                     title: 'Sign In',
-
                 }} />
-                <Stack.Screen name='signup/index' options={{
+                <Stack.Screen name='signup' options={{
                     title: 'Sing Up'
                 }} />
-                <Stack.Screen name='restore/index' options={{
+                <Stack.Screen name='restore' options={{
                     title: 'Restore password'
                 }} />
             </Stack>

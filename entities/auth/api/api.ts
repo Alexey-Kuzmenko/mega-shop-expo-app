@@ -1,6 +1,6 @@
-type API_ROUTES_KEYS = 'login' | 'profile' | 'products' | 'categories' | 'users';
+import { API_URL } from '@/constants';
 
-const API_URL = process.env.EXPO_PUBLIC_API_URL;
+type API_ROUTES_KEYS = 'login' | 'profile' | 'products' | 'categories' | 'users';
 
 if (!API_URL) {
     // eslint-disable-next-line no-console

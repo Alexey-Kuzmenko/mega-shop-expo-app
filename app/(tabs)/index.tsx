@@ -6,7 +6,7 @@ import { CustomLink as Link } from '@/shared/CustomLink';
 import { Typography } from '@/shared/Typography';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-export default function HomeScreen() {
+export default function Home() {
     const logout = useSetAtom(logoutAtom);
 
     const handleLogout = (): void => {

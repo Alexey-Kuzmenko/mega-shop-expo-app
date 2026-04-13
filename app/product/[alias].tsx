@@ -3,11 +3,11 @@ import { useLocalSearchParams } from 'expo-router';
 import { useAtom } from 'jotai';
 
 import { Typography } from '@/shared/Typography';
-import { profileAtom } from '@/entities/user/model/user.state';
+import { userProfileAtom } from '@/entities/user/model/user.state';
 
 export default function ProductPage() {
     const { alias } = useLocalSearchParams();
-    const [profile] = useAtom(profileAtom);
+    const [profile] = useAtom(userProfileAtom);
 
     return (
         <SafeAreaView>

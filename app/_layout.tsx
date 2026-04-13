@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Platform } from 'react-native';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import { Stack, SplashScreen } from 'expo-router';
+import { SplashScreen, Stack } from 'expo-router';
 import { useFonts } from 'expo-font';
 import { StatusBar } from 'expo-status-bar';
 
@@ -37,8 +37,11 @@ function RootLayout() {
                     paddingTop: insets.top,
                     paddingBottom: isIOS ? 3 : 0
                 }
-            }} />
-        </SafeAreaProvider>
+            }}>
+                <Stack.Screen name='(tabs)' />
+                <Stack.Screen name='(auth)' />
+            </Stack>
+        </SafeAreaProvider >
     );
 }
 

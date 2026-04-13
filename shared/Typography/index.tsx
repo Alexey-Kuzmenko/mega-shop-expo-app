@@ -1,4 +1,3 @@
-import { PropsWithChildren } from 'react';
 import { StyleProp, Text, TextStyle } from 'react-native';
 
 import styles from './styles';
@@ -9,7 +8,7 @@ export const fontStyles = {
     'bold': 'DMSansBold'
 };
 
-interface TypographyProps extends PropsWithChildren {
+interface TypographyProps {
     text: string
     textStyle?: StyleProp<TextStyle>
     fontStyle?: keyof typeof fontStyles
