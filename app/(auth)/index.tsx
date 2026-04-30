@@ -53,7 +53,7 @@ export default function AuthScreen() {
     <>
       {showErrorAlert && <Alert show text={error || ''} type='error' onPress={handleAlertPress} />}
 
-      <Pressable onPress={() => router.replace('/(tabs)')}>
+      <Pressable onPress={() => router.back()}>
         <Typography text='Go back' />
       </Pressable>
 

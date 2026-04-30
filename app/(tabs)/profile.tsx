@@ -1,10 +1,10 @@
+import { View } from 'react-native';
+import { useEffect } from 'react';
+import { useAtom, useAtomValue } from 'jotai';
+import { LoginPlaceholder } from '@/features/auth';
 import { authAtom } from '@/entities/auth/model/auth.state';
 import { getUserProfileAtom } from '@/entities/user/model/user.state';
 import { Typography } from '@/shared';
-import { Redirect } from 'expo-router';
-import { useAtom, useAtomValue } from 'jotai';
-import { useEffect } from 'react';
-import { View } from 'react-native';
 
 function UserProfile() {
     const { access_token } = useAtomValue(authAtom);
@@ -16,7 +16,7 @@ function UserProfile() {
     }, []);
 
     if (!access_token) {
-        return <Redirect href='/(auth)' />;
+        return <LoginPlaceholder />;
     }
 
     return (
