@@ -5,9 +5,12 @@ const footerBtnTextLineHeigh = Platform.OS === 'ios' ? 14 : 18;
 const titleLineHeigh = Platform.OS === 'ios' ? 25 : 30;
 
 export default StyleSheet.create({
+    scrollWrapper: {
+        flex: 1
+    },
     container: {
         backgroundColor: colors.primary.pureWhite,
-        paddingTop: '34%',
+        paddingTop: 72,
         paddingLeft: 25,
         paddingRight: 25,
         height: '100%'
@@ -33,7 +36,7 @@ export default StyleSheet.create({
         rowGap: 30
     },
     formControls: {
-        paddingTop: 85
+        paddingTop: 70,
     },
     formButton: {
         backgroundColor: colors.primary.blueOcean

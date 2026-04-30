@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import { Pressable, ScrollView, Text, View } from 'react-native';
+import { Platform, ScrollView, Text, View } from 'react-native';
 import { router } from 'expo-router';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useAtom } from 'jotai';
 import { loginAtom } from '@/entities/auth/model/auth.state';
 
@@ -9,7 +10,6 @@ import {
   CustomButton as Button,
   CustomLink as Link,
   CustomAlert as Alert,
-  Typography
 } from '@/shared';
 
 import styles from './styles';
@@ -20,6 +20,11 @@ export default function AuthScreen() {
   const [userEmail, setUserEmail] = useState<string>('');
   const [userPassword, setUserPassword] = useState<string>('');
   const [showErrorAlert, setShowErrorAlert] = useState<boolean>(false);
+  const { bottom } = useSafeAreaInsets();
+  const containerBottomPadding = Platform.select({
+    ios: bottom,
+    android: 20
+  });
 
   const handleSubmit = async (): Promise<void> => {
     await login({ email: userEmail, password: userPassword });
@@ -46,16 +51,11 @@ export default function AuthScreen() {
   };
 
   return (
-    // <ScrollView
-    //   contentContainerStyle={{ flexGrow: 1 }}
-    //   bounces={false}
-    // >
-    <>
+    <ScrollView
+      contentContainerStyle={styles.scrollWrapper}
+      bounces={false}
+    >
       {showErrorAlert && <Alert show text={error || ''} type='error' onPress={handleAlertPress} />}
-
-      <Pressable onPress={() => router.back()}>
-        <Typography text='Go back' />
-      </Pressable>
 
       <View style={styles.container}>
         <View style={styles.content}>
@@ -103,7 +103,6 @@ export default function AuthScreen() {
           />
         </View>
       </View>
-    </>
-    // </ScrollView>
+    </ScrollView>
   );
 }

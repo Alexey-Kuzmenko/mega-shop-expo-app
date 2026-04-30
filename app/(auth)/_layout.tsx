@@ -1,8 +1,8 @@
 import { Platform } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
+import { Header } from '@/entities/auth/ui';
 
 function AuthLayout() {
     const isIOS = Platform.OS === 'ios';
@@ -11,20 +11,16 @@ function AuthLayout() {
         <SafeAreaProvider>
             <StatusBar style='dark' />
             <Stack screenOptions={{
-                headerShown: false,
+                headerShown: true,
+                title: '',
                 contentStyle: {
                     paddingBottom: isIOS ? 3 : 0
-                }
+                },
+                header: () => <Header />,
             }}>
-                <Stack.Screen name='index' options={{
-                    title: 'Sign In',
-                }} />
-                <Stack.Screen name='signup' options={{
-                    title: 'Sing Up'
-                }} />
-                <Stack.Screen name='restore' options={{
-                    title: 'Restore password'
-                }} />
+                <Stack.Screen name='index' />
+                <Stack.Screen name='signup' />
+                <Stack.Screen name='restore' />
             </Stack>
         </SafeAreaProvider>
     );
