@@ -40,6 +40,7 @@ function RootLayout() {
             }}>
                 <Stack.Screen name='(tabs)' />
                 <Stack.Screen name='(auth)' />
+                <Stack.Screen name='(notifications)' />
             </Stack>
         </SafeAreaProvider >
     );

@@ -1,5 +1,6 @@
 export * from './BagIcon';
 export * from './BasketIcon';
+export * from './Bell';
 export * from './ClosedEye';
 export * from './ErrorIcon';
 export * from './Eye';

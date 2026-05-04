@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
-import { Platform, ScrollView, Text, View } from 'react-native';
+import { ScrollView, Text, View } from 'react-native';
 import { router } from 'expo-router';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useAtom } from 'jotai';
-import { loginAtom } from '@/entities/auth/model/auth.state';
+import { loginAtom } from '@/entities/auth';
 
 import {
   Input,
@@ -20,11 +19,6 @@ export default function AuthScreen() {
   const [userEmail, setUserEmail] = useState<string>('');
   const [userPassword, setUserPassword] = useState<string>('');
   const [showErrorAlert, setShowErrorAlert] = useState<boolean>(false);
-  const { bottom } = useSafeAreaInsets();
-  const containerBottomPadding = Platform.select({
-    ios: bottom,
-    android: 20
-  });
 
   const handleSubmit = async (): Promise<void> => {
     await login({ email: userEmail, password: userPassword });

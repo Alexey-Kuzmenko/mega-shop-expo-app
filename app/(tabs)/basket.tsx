@@ -4,7 +4,7 @@ import { authAtom } from '@/entities/auth/model/auth.state';
 import { Typography } from '@/shared';
 import { LoginPlaceholder } from '@/features/auth/ui';
 
-function Order() {
+function Basket() {
     const { access_token } = useAtomValue(authAtom);
 
     if (!access_token) {
@@ -18,4 +18,4 @@ function Order() {
     );
 }
 
-export default Order;
+export default Basket;
