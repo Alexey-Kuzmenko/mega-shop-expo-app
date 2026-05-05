@@ -20,7 +20,7 @@ export const HomeScreenHeader: FC<Props> = ({ headerContainerStyle }) => {
     return (
         <Header headerStyle={[styles.homeScreenHeader, headerContainerStyle]}>
             <View style={styles.homeScreenHeaderLogo}>
-                <Typography text='Mega Mall' fontStyle='bold' textStyle={styles.homeScreenHeaderLogoText} />
+                <Typography text='Mega Shop' fontStyle='bold' textStyle={styles.homeScreenHeaderLogoText} />
             </View>
             <NotificationButton style={styles.icon} onPress={handlePress} />
         </Header>

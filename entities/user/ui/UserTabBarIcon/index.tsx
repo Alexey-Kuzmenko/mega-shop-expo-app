@@ -29,6 +29,4 @@ export const UserTabBarIcon: FC<Props> = ({ isActive, avatar }) => {
             }]} />
         );
     }
-
 };
-

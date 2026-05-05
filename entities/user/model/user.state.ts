@@ -22,10 +22,11 @@ export const getUserProfileAtom = atom(async (get) => get(userProfileAtom), asyn
     try {
         const { access_token } = await get(authAtom);
 
-        set(userProfileAtom, {
-            ...initialValue,
-            isLoading: true
-        });
+        set(userProfileAtom, (prev) => ({
+            ...prev,
+            isLoading: true,
+            error: null
+        }));
 
         const { data } = await axios.get<UserModel>(USER_API_ROUTES.profile, {
             headers: {
@@ -51,5 +52,4 @@ export const getUserProfileAtom = atom(async (get) => get(userProfileAtom), asyn
         // eslint-disable-next-line no-console
         console.error(String(error));
     }
-
 });

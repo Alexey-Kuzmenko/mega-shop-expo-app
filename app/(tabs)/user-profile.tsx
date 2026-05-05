@@ -1,10 +1,11 @@
 import { View } from 'react-native';
 import { useEffect } from 'react';
 import { useAtom, useAtomValue } from 'jotai';
+
 import { LoginPlaceholder } from '@/features/auth';
-import { authAtom } from '@/entities/auth/model/auth.state';
-import { getUserProfileAtom } from '@/entities/user/model/user.state';
-import { Typography } from '@/shared';
+import { authAtom } from '@/entities/auth';
+import { getUserProfileAtom } from '@/entities/user';
+import { UserAvatarPicker } from '@/features/user';
 
 function UserProfile() {
     const { access_token } = useAtomValue(authAtom);
@@ -19,10 +20,10 @@ function UserProfile() {
         return <LoginPlaceholder />;
     }
 
+
     return (
         <View>
-            <Typography text='User profile' />
-            <Typography text={JSON.stringify(profile)} />
+            <UserAvatarPicker avatarUri={profile.profile?.avatar} />
         </View>
     );
 }
