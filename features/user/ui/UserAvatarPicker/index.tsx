@@ -78,6 +78,10 @@ export const UserAvatarPicker: FC<Props> = ({ avatarUri }) => {
         const response = await uploadAvatar(asset.uri, asset.fileName ?? '');
         if (!response?.location) return;
 
+        // TODO: Add request for user data update and send new profile image location received from API
+        // await updateProfile({ avatar: response?.location });
+        // setImage(profile.avatar);
+
         setImage(response.location);
     };
 

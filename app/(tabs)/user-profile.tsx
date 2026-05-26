@@ -1,4 +1,3 @@
-import { View } from 'react-native';
 import { useEffect } from 'react';
 import { useAtom, useAtomValue } from 'jotai';
 
@@ -6,6 +5,8 @@ import { LoginPlaceholder } from '@/features/auth';
 import { authAtom } from '@/entities/auth';
 import { getUserProfileAtom } from '@/entities/user';
 import { UserAvatarPicker } from '@/features/user';
+import { Container } from '@/shared';
+import { UserData } from '@/entities/user/ui/UserData';
 
 function UserProfile() {
     const { access_token } = useAtomValue(authAtom);
@@ -20,11 +21,15 @@ function UserProfile() {
         return <LoginPlaceholder />;
     }
 
+    if (!profile.profile) {
+        return null;
+    }
 
     return (
-        <View>
-            <UserAvatarPicker avatarUri={profile.profile?.avatar} />
-        </View>
+        <Container>
+            <UserAvatarPicker avatarUri={profile.profile.avatar} />
+            <UserData userProfile={profile.profile} />
+        </Container>
     );
 }
 
