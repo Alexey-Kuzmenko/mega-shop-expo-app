@@ -10,7 +10,7 @@
     "backgroundColor": "#FFFFFF",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true,
+      "supportsTablet": false,
       "bundleIdentifier": "com.anonymous.megashopapp"
     },
     "android": {
