@@ -1,13 +1,17 @@
 import { Platform, StyleSheet } from 'react-native';
 import { colors } from '@/styles/theme';
 
-const footerBtnTextLineHeigh = Platform.OS === 'ios' ? 14 : 18;
-const titleLineHeigh = Platform.OS === 'ios' ? 25 : 30;
+const footerBtnTextLineHeigh = Platform.select({
+    ios: 14,
+    android: 18
+});
+
+const titleLineHeigh = Platform.select({
+    ios: 25,
+    android: 30
+});
 
 export default StyleSheet.create({
-    scrollWrapper: {
-        flex: 1
-    },
     container: {
         backgroundColor: colors.primary.pureWhite,
         paddingTop: 72,
@@ -43,8 +47,7 @@ export default StyleSheet.create({
     },
     footer: {
         marginTop: 'auto',
-        paddingLeft: 5,
-        paddingRight: 5,
+        paddingHorizontal: 5,
         paddingBottom: 30,
         flexDirection: 'row',
         justifyContent: 'space-between',
