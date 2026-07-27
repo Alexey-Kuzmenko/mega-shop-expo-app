@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { ScrollView, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { router } from 'expo-router';
 import { useAtom } from 'jotai';
 import { loginAtom } from '@/entities/auth';
@@ -44,11 +45,9 @@ export default function AuthScreen() {
     setShowErrorAlert(false);
   };
 
+  // TODO: Move login form to separate component
   return (
-    <ScrollView
-      contentContainerStyle={styles.scrollWrapper}
-      bounces={false}
-    >
+    <SafeAreaView>
       {showErrorAlert && <Alert show text={error || ''} type='error' onPress={handleAlertPress} />}
 
       <View style={styles.container}>
@@ -97,6 +96,6 @@ export default function AuthScreen() {
           />
         </View>
       </View>
-    </ScrollView>
+    </SafeAreaView>
   );
 }
