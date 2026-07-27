@@ -1,9 +1,8 @@
 import { Image, View } from 'react-native';
-import { useRouter } from 'expo-router';
+import { useRouter, useRoute } from 'expo-router';
 import { CustomButton as Button, Typography } from '@/shared';
 
 import styles from './styles';
-import { useRoute } from '@react-navigation/native';
 import { content } from './content';
 
 export const LoginPlaceholder = () => {
