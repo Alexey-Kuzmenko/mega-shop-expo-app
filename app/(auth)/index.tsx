@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Text, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { router } from 'expo-router';
 import { useAtom } from 'jotai';
 import { loginAtom } from '@/entities/auth';
@@ -12,7 +13,6 @@ import {
 } from '@/shared';
 
 import styles from './styles';
-import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function AuthScreen() {
   const [auth, login] = useAtom(loginAtom);
