@@ -5,8 +5,8 @@ import { LoginPlaceholder } from '@/features/auth';
 import { authAtom } from '@/entities/auth';
 import { getUserProfileAtom } from '@/entities/user';
 import { UserAvatarPicker } from '@/features/user';
-import { Container } from '@/shared';
 import { UserData } from '@/entities/user/ui/UserData';
+import { View } from 'react-native';
 
 function UserProfile() {
     const { access_token } = useAtomValue(authAtom);
@@ -25,11 +25,12 @@ function UserProfile() {
         return null;
     }
 
+    // TODO: Move to separate file
     return (
-        <Container>
+        <View style={{ alignItems: 'center' }}>
             <UserAvatarPicker avatarUri={profile.profile.avatar} />
             <UserData userProfile={profile.profile} />
-        </Container>
+        </View>
     );
 }
 

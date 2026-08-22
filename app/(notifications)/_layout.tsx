@@ -1,6 +1,8 @@
-import { colors } from '@/styles/theme';
-import { MainHeader } from '@/widgets/layout';
 import { Stack } from 'expo-router';
+
+import { Container } from '@/shared';
+import { MainHeader } from '@/widgets/layout';
+import { colors } from '@/styles/theme';
 
 function NotificationsLayout() {
     return (
@@ -9,7 +11,11 @@ function NotificationsLayout() {
             contentStyle: {
                 backgroundColor: colors.primary.pureWhite
             }
-        }}>
+        }}
+            screenLayout={({ children }) => (
+                <Container>{children}</Container>
+            )}
+        >
             <Stack.Screen name='index' />
         </Stack>
     );

@@ -5,8 +5,15 @@ export default StyleSheet.create({
     homeScreenHeader: {
         flexDirection: 'row',
         justifyContent: 'center',
-        paddingVertical: 16,
+        alignItems: 'center',
+        paddingVertical: 15,
         paddingHorizontal: 25,
+        boxShadow: [{
+            offsetX: 0,
+            offsetY: 1,
+            blurRadius: 4,
+            color: colors.overlay['005'],
+        }],
     },
     homeScreenHeaderLogo: {
         flexGrow: 1,

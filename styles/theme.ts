@@ -18,7 +18,16 @@ export const colors = {
     offBlue: '#EFF5FB',
     offGreen: '#EEFAF6',
     offRed: '#FCECEF'
+  },
+  overlay: {
+    '005': 'rgba(0, 0, 0, 0.05)',
+    '07': 'rgba(0, 0, 0, 0.7)'
   }
+};
+
+export const paddings = {
+  p25: 25,
+  p30: 30,
 };
 
 export const gaps = {

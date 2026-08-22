@@ -1,16 +1,16 @@
 import { useEffect } from 'react';
 import { Platform } from 'react-native';
-import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { SplashScreen, Stack } from 'expo-router';
+import { StatusBar, StatusBarStyle } from 'expo-status-bar';
 import { useFonts } from 'expo-font';
-import { StatusBar } from 'expo-status-bar';
 
 SplashScreen.preventAutoHideAsync();
 
 function RootLayout() {
-    const insets = useSafeAreaInsets();
     const isIOS = Platform.OS === 'ios';
+    const statusBarStyle: StatusBarStyle = isIOS ? 'dark' : 'light';
 
     const [loaded, error] = useFonts({
         DMSans: require('../assets/fonts/DMSans-Regular.ttf'),
@@ -30,14 +30,14 @@ function RootLayout() {
 
     return (
         <SafeAreaProvider>
-            <StatusBar style='dark' />
+            <StatusBar style={statusBarStyle} />
             <Stack screenOptions={{
                 headerShown: false,
                 contentStyle: {
-                    paddingTop: insets.top,
                     paddingBottom: isIOS ? 3 : 0
-                }
-            }}>
+                },
+            }}
+            >
                 <Stack.Screen name='(tabs)' />
                 <Stack.Screen name='(auth)' />
                 <Stack.Screen name='(notifications)' />

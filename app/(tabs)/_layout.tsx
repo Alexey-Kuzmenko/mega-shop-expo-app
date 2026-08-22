@@ -5,7 +5,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { userProfileAtom } from '@/entities/user';
 import { UserTabBarIcon } from '@/entities/user';
 import { authAtom } from '@/entities/auth';
-import { BasketIcon, HeartIcon, HomeIcon, ProfileIcon } from '@/shared';
+import { BasketIcon, Container, HeartIcon, HomeIcon, ProfileIcon } from '@/shared';
 
 import { colors } from '@/styles/theme';
 import { TAB_BAR_ICON_SIZE } from '@/constants';
@@ -23,13 +23,12 @@ function TabsLayout() {
                 tabBarStyle: {
                     paddingTop: 5,
                     backgroundColor: colors.primary.pureWhite,
-                    shadowColor: 'rgba(0, 0, 0, 0.7)',
-                    shadowOffset: {
-                        width: 0,
-                        height: -1
-                    },
-                    shadowRadius: 4,
-                    shadowOpacity: 1,
+                    boxShadow: [{
+                        offsetX: 0,
+                        offsetY: -1,
+                        blurRadius: 4,
+                        color: colors.overlay['005'],
+                    }]
                 },
                 tabBarActiveTintColor: colors.primary.blueOcean,
                 tabBarInactiveTintColor: colors.primary.black,
@@ -41,8 +40,12 @@ function TabsLayout() {
                 },
                 sceneStyle: {
                     backgroundColor: colors.primary.pureWhite
-                }
-            }}>
+                },
+            }}
+                screenLayout={({ children }) => (
+                    <Container>{children}</Container>
+                )}
+            >
                 <Tabs.Screen name='index' options={{
                     title: 'Home',
                     tabBarIcon: ({ color }) => <HomeIcon
@@ -81,7 +84,7 @@ function TabsLayout() {
                     header: () => <MainHeader />
                 }} />
             </Tabs>
-        </SafeAreaProvider>
+        </SafeAreaProvider >
     );
 }
 
