@@ -1,13 +1,21 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useEffect } from 'react';
 import { useSetAtom } from 'jotai';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import { logoutAtom } from '@/entities/auth/model/auth.state';
+import { logoutAtom } from '@/entities/auth';
+import { getProductAtom } from '@/entities/product';
 import { CustomButton as Button } from '@/shared/CustomButton';
 import { CustomLink as Link } from '@/shared/CustomLink';
 import { Typography } from '@/shared/Typography';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function Home() {
     const logout = useSetAtom(logoutAtom);
+    const getProducts = useSetAtom(getProductAtom);
+
+    useEffect(() => {
+        getProducts();
+    }, []);
 
     const handleLogout = (): void => {
         logout();
